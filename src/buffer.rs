@@ -125,7 +125,7 @@ impl BufferPoolManager {
     }
 
     pub fn fetch_page(&mut self, page_id: PageId) -> Result<Rc<Buffer>, Error> {
-        dbg!(page_id);
+        // dbg!(page_id);
         if let Some(&buffer_id) = self.page_table.get(&page_id) {
             // page exists in buffer
             let frame = &mut self.pool[buffer_id];
